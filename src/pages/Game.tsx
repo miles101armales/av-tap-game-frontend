@@ -19,16 +19,15 @@ const Game: React.FC = () => {
   };
 
   return (
-	<>
-		<div className="game-container">
-		<div className="score-display">Счет: {score}</div>
-		<div className="circle-container">
-			<div className="circle" onClick={handleTap}>
-			<span className="circle-text">Тап!</span>
-			</div>
-		</div>
-		</div>
-	</>
+    <div className="circle-container">
+    <img 
+      src={'../../public/sticker.webp'} 
+      alt="Tap!" 
+      onClick={handleTap}
+      className="tap-image"
+    />
+    <span className="tap-text">Тап!</span>
+  </div>
     
   );
 };

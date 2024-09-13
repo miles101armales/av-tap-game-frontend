@@ -21,7 +21,7 @@ const Game: React.FC = () => {
   return (
     <div className="circle-container">
     <img 
-      src={'../../public/sticker.webp'} 
+      src={'https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/sticker.webp'} 
       alt="Tap!" 
       onClick={handleTap}
       className="tap-image"

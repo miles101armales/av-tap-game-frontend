@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Game.css';
-import clickableImage from '../../assets/sticker.webp'; // Замените на путь к вашему изображению
-import backgroundImage from '../../assets/banner-342.png'; // Замените на путь к фоновому изображению
+import clickableImage from 'https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/src/assets/sticker.webp'; // Замените на путь к вашему изображению
 
 const Game: React.FC = () => {
   const [score, setScore] = useState(0);

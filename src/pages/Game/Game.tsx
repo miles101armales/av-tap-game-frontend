@@ -23,7 +23,7 @@ const Game: React.FC = () => {
       <div className="score">Счет: {score}</div>
       <div className="clickable-area" onClick={handleClick}>
         <div className={`clickable-object ${moneyFall ? 'clicked' : ''}`}>
-          <img src={'https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/src/assets/sticker.webp'} alt="Clickable Object" />
+          <img src={'https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/sticker.webp'} alt="Clickable Object" />
           <div className="overlay-text">Нажми на меня</div>
         </div>
         {moneyFall && <div className="money-animation"></div>}

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.leaderboard-container {
+  padding: 20px;
+  min-height: 100vh;
+  background-image: url('https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/banner-342.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.leaderboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #ffffff;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.leaderboard-card {
+  background-color: rgba(255, 165, 0, 0.85);
+  border-radius: 15px;
+  padding: 15px;
+  width: 250px;
+  height: 200px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-rank {
+  font-size: 26px;
+  margin: 0;
+}
+
+.user-name {
+  font-size: 20px;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.user-score {
+  font-size: 18px;
+  margin: 0;
+}
+
+.telegram-link {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  background-color: #ff8c00;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  align-self: center;
+}
+
+.telegram-link:hover {
+  background-color: #e07b00;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-card {
+    width: 100%;
+    height: auto;
+  }
+}

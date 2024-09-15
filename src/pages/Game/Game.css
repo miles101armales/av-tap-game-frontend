@@ -1,5 +1,5 @@
 .game-container {
-	position: absolute;
+	position: absolute; /* Изменено с absolute на relative */
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -8,10 +8,31 @@
 	background-repeat: no-repeat;
 	overflow: hidden; /* Чтобы обрезать выходящие за пределы элементы */
 	display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	cursor: pointer; /* Перенесли cursor сюда */
   }
+/* Установка Montserrat как дефолтного шрифта */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
   
   .score {
 	font-size: 24px;
@@ -23,11 +44,9 @@
   .clickable-area {
 	width: 100%;
 	height: 100%;
-	cursor: pointer;
-
 	display: flex;
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
   }
   
   .clickable-object {
@@ -35,9 +54,12 @@
   }
   
   .clickable-object img {
-	justify-self: center;
-	width: 200px;
+	width: 300px;
 	transition: transform 0.2s;
+  }
+  
+  .clickable-object:active {
+	transform: scale(0.95);
   }
   
   .clickable-object .overlay-text {
@@ -51,47 +73,6 @@
 	pointer-events: none;
   }
   
-  .clickable-object.clicked img {
-	animation: clickAnimation 0.09s;
-  }
-  
-  @keyframes clickAnimation {
-	0% {
-	  transform: scale(1);
-	  filter: drop-shadow(0 0 10px yellow);
-	}
-	50% {
-	  transform: scale(0.9);
-	  filter: drop-shadow(0 0 20px yellow);
-	}
-	100% {
-	  transform: scale(1);
-	  filter: drop-shadow(0 0 10px yellow);
-	}
-  }
-  
-  .money-animation {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 10%;
-	height: 10%;
-	background-image: url('https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/Emojione_1F4B8.svg.png');
-	background-size: contain;
-	background-repeat: repeat;
-	animation: fall 1s linear;
-	pointer-events: none;
-  }
-  
-  @keyframes fall {
-	0% {
-	  background-position: 0 -100%;
-	}
-	100% {
-	  background-position: 0 100%;
-	}
-  }
-
   @media (max-width: 600px) {
 	.clickable-object img {
 	  width: 150px;
@@ -104,4 +85,45 @@
 	.clickable-object .overlay-text {
 	  font-size: 10px;
 	}
+  }
+  
+  .leaf-container {
+	position: fixed; /* Изменено на absolute */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	pointer-events: none; /* Чтобы клики проходили через элемент */
+  }
+
+  .leaf {
+	--rotate: 360deg;
+	--translateX: 100px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	background-image: url('https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/Emojione_1F4B8.svg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transform: translateX(-50%) translateY(0) rotate(0deg);
+	will-change: transform, opacity;
+  }
+  
+  @keyframes fall {
+	0% {
+	  opacity: 1;
+	  transform: translateX(0) translateY(0) rotate(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(var(--translateX)) translateY(100vh) rotate(var(--rotate));
+	  }
+  }
+  
+  .animate {
+	animation: fall 3s ease-in forwards;
   }

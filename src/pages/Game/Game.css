@@ -72,18 +72,26 @@ body {
 	text-shadow: 1px 1px 2px #000;
 	pointer-events: none;
   }
+
+  .click-text {
+	margin-top: 10px;
+	font-size: 20px;
+	color: #ffffff;
+	text-shadow: 1px 1px 2px #000000;
+	text-align: center;
+  }
   
   @media (max-width: 600px) {
 	.clickable-object img {
-	  width: 150px;
-	}
+		width: 200px; /* Изменение размера картинки на мобильных */
+	  }
+	
+	  .click-text {
+		font-size: 14px; /* Уменьшение размера текста на мобильных */
+	  }
   
 	.score {
 	  font-size: 20px;
-	}
-  
-	.clickable-object .overlay-text {
-	  font-size: 10px;
 	}
   }
   

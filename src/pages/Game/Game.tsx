@@ -61,6 +61,7 @@ const Game: React.FC = () => {
             src="https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/sticker.webp"
             alt="Clickable Object"
           />
+           <div className="click-text">НАЖМИ НА МЕНЯ</div> 
         </div>
       </div>
     </div>

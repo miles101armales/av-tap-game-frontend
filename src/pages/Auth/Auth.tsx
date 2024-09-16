@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Auth.css'
 
 const Auth = () => {
@@ -16,7 +16,7 @@ const Auth = () => {
     return () => {
       tg.close();
     };
-  }, []);
+  }, [user]);
 
   const sendDataToServer = async () => {
     const response = await fetch('https://45.131.96.9:3000/game-bot/telegram/webapp-data', {

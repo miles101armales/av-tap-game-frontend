@@ -14,6 +14,9 @@ const Menu: React.FC = () => {
       <NavLink to="/referrals">
         Рефералы
       </NavLink>
+      <NavLink to="/auth">
+        Auth
+      </NavLink>
     </div>
   );
 };

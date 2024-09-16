@@ -23,16 +23,24 @@ const Auth = () => {
   }, []);
 
   const sendDataToServer = async () => {
-    const response = await fetch('https://45.131.96.9:3000/game-bot/telegram/webapp-data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ data: 'Some data from Web App' }),
-    });
-    console.log(user)
-    const result = await response.json();
-    console.log('Ответ сервера:', result);
+    try {
+      const response = await fetch('https://your-secure-domain.com/game-bot/telegram/webapp-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: 'Some data from Web App' }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+  
+      const result = await response.json();
+      console.log('Ответ сервера:', result, user);
+    } catch (error) {
+      console.error('Ошибка при отправке данных на сервер:', error);
+    }
   };
   
   return (

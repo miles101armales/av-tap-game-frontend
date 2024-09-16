@@ -5,18 +5,22 @@ const Auth = () => {
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    // Получение данных пользователя из контекста Telegram Web App
-    const tg = window.Telegram.WebApp;
-    tg.ready();
-    
-    // Получаем данные о пользователе
-    setUser(tg.initDataUnsafe?.user);
+    // Проверяем, доступен ли Telegram WebApp API
+    if (window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp;
+      tg.ready();
 
-    // Вызываем функцию при закрытии Web App
-    return () => {
-      tg.close();
-    };
-  }, [user]);
+      // Получаем данные о пользователе, если они доступны
+      setUser(tg.initDataUnsafe?.user);
+
+      // Возвращаем функцию для закрытия Web App при завершении
+      return () => {
+        tg.close();
+      };
+    } else {
+      console.log('Telegram Web App не найден, приложение работает вне Telegram.');
+    }
+  }, []);
 
   const sendDataToServer = async () => {
     const response = await fetch('https://45.131.96.9:3000/game-bot/telegram/webapp-data', {
@@ -26,6 +30,7 @@ const Auth = () => {
       },
       body: JSON.stringify({ data: 'Some data from Web App' }),
     });
+    console.log(user)
     const result = await response.json();
     console.log('Ответ сервера:', result);
   };

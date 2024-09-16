@@ -1,0 +1,23 @@
+.auth-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Высота контейнера на весь экран */
+	padding: 20px;
+	box-sizing: border-box;
+  
+	/* Фон из страницы лидеров */
+	background-image: url('https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/banner-342.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+  
+	/* Дополнительные стили */
+	font-family: 'Montserrat', sans-serif;
+  }
+  
+  .auth-container h1 {
+	font-size: 25px;
+	color: #ffffff; /* Белый цвет текста для контраста с фоном */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для улучшения читаемости */
+  }

@@ -6,6 +6,7 @@ import Menu from './components/Menu/Menu.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Leaderboard from './pages/Leaderboard/Leaderboard.tsx'
 import Referal from './pages/Referal/Referal.tsx'
+import Auth from './pages/Auth/Auth.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<Game />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/referrals" element={<Referal />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

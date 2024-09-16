@@ -3,7 +3,7 @@
 .leaderboard-container {
   padding: 20px;
   min-height: 100vh;
-  background-image: url('https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/banner-342.png');
+  background-image: url('../../assets/banner-342.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

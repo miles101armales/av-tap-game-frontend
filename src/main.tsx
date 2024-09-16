@@ -10,7 +10,7 @@ import Auth from './pages/Auth/Auth.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/av-tap-game-frontend">
+    <BrowserRouter>
       <Menu />
       <Routes>
         <Route path="/" element={<Game />} />

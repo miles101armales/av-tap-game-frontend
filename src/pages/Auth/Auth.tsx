@@ -24,7 +24,7 @@ const Auth = () => {
 
   const sendDataToServer = async () => {
     try {
-      const response = await fetch('https://your-secure-domain.com/game-bot/telegram/webapp-data', {
+      const response = await fetch('https://finance-av.ru/game-bot/telegram/webapp-data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

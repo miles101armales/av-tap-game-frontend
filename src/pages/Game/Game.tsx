@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Game.css';
 import { nanoid } from 'nanoid';
+import sticker from '../../assets/sticker.webp';
 
 interface Leaf {
   id: string;
@@ -58,7 +59,7 @@ const Game: React.FC = () => {
       <div className="clickable-area">
         <div className="clickable-object">
           <img
-            src="https://raw.githubusercontent.com/miles101armales/av-tap-game-frontend/main/public/sticker.webp"
+            src={sticker}
             alt="Clickable Object"
           />
            <div className="click-text">НАЖМИ НА МЕНЯ</div> 

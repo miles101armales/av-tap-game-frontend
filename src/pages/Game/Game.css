@@ -92,7 +92,11 @@ body {
 	  }
   
 	.score {
-	  font-size: 20px;
+	  font-size: 18px;
+	}
+
+	.overlay-text {
+		font-size: 24px;
 	}
   }
   
